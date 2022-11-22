@@ -1,5 +1,6 @@
+import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import  './App.css';
 import Add from './Components/Add';
 import Display from './Components/Display';
 import {useState} from 'react'
@@ -24,15 +25,18 @@ function App() {
 
 };
 
-const deleteItem = (()=>{
-  let id = list((id))
+const deleteItem = ((i)=>{
+  let id = list.filter(list=>list.id !==i);
 
+  setlist(id)
 
-  return (
+})
+
+return (
   <div className="App">
-  <Add add={addItem}/>
-  <Display data={list}/>
-      
+    <Add add ={addName}/>
+    <Display data={list}  delete={deleteItem} />
+    
     </div>
   );
 
